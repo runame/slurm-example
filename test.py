@@ -34,6 +34,7 @@ def main():
     ensemble_metrics = test('ensemble', models, test_loader, device)
     mola_metrics = test('mola', mola_components, test_loader, device)
 
+    print()
     print('Ensemble results:')
     print(', '.join([f'{k}: {v:.4f}' for k, v in ensemble_metrics.items()]))
     print()

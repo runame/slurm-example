@@ -10,4 +10,8 @@ scontrol show job $SLURM_JOB_ID
 
 # Assuming you have activated your conda environment
 python train.py --seed $SLURM_ARRAY_TASK_ID
-python test.py
+wait
+if [ $SLURM_ARRAY_TASK_ID -eq 1 ]
+then
+    python test.py
+fi
